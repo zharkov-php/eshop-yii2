@@ -93,15 +93,14 @@ use yii\helpers\Html;
                             <?php endif; ?>
                     <?php endforeach; ?>
                     <div class="clearfix"></div>
-<?php echo $i . "штук"; ?>
+                    <?php
+                    echo \yii\widgets\LinkPager::widget([
+                        'pagination' => $pages,
+                    ]);
+                    ?>
 
 
-                    <ul class="pagination">
-                        <li class="active"><a href="">1</a></li>
-                        <li><a href="">2</a></li>
-                        <li><a href="">3</a></li>
-                        <li><a href="">&raquo;</a></li>
-                    </ul>
+
                 </div><!--features_items-->
             </div>
         </div>

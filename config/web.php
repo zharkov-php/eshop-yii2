@@ -6,13 +6,13 @@ $config = [
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
-    'language' => 'ru-RU',
-    'defaultRoute' => 'category/index',
+    'language' => 'ru-RU',                  // Lang
+    'defaultRoute' => 'category/index',     //route index.php
     'components' => [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'uvxfBK9B1S8ovnPJGbcAYyRrRCj56Qh3',
-            'baseUrl' => '',
+            'baseUrl' => '',                 //base url
         ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
@@ -45,7 +45,9 @@ $config = [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-                'category/<id:\d+>' => 'category/view',
+                'category/<id:\d+>/page/<page:\d+>' => 'category/view',  //pagination for Product in category/index
+
+                'category/<id:\d+>' => 'category/view',                 //rules for CategoryController
             ],
         ],
     ],
