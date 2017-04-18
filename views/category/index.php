@@ -4,7 +4,7 @@
 
 use yii\helpers\Html;
 
-$this->title = 'Мое пр';
+
 ?>
 //<?php
 //foreach($hits as $hit){
