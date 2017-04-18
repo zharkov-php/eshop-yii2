@@ -4,7 +4,7 @@
 
 use yii\helpers\Html;
 
-$this->title = 'CategoryController';
+
 ?>
 <section id="advertisement">
     <div class="container">

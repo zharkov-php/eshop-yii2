@@ -11,6 +11,8 @@ class CategoryController extends AppController
     public function actionIndex()
     {
         $hits = Product::find()->asArray()->where(['hit' => '1'])->all();
+        $this->setMeta('my title', 'my keywords', 'my description');
+
         return $this->render('index', compact('hits'));
     }
 
@@ -19,6 +21,8 @@ class CategoryController extends AppController
         $id = Yii::$app->request->get('id');
        // myDebug($id);
         $products = Product::find()->where(['category_id' => $id])->all();
+        $category = Category::findOne($id);
+        $this->setMeta('E-SHOPPER | ' . $category['name'], $category['keywords'], $category['description']);
         return $this->render('view', compact('products'));
     }
 
